@@ -28,16 +28,77 @@ let spinner = `
             Loading...
             </button>`;
 
+if (nombrePaagina == crearPagina){
 
+formulario.addEventListener("submit",
+    function(evento){
+        evento.preventDefault();//evita la recarga de la pagina
+      
+        let datos = new FormData(formulario);
 
+        let datosEnviar =
+        {
+        
+            nombre: datos.get('nombre'),
+            descripcion: datos.get('descripcion'),
+            tiempo: datos.get('tiempo'),
+            usuario: datos.get('usuario')
+        };
 
+        fetch ( url + insertar,
+            {
+                method: 'POST',
+                body: JSON.stringify(datosEnviar)
+            }
+        ) 
+        .then( repuesta=> repuesta.json() )
+        .then ( (datosrepuestas) => {
+            insertarDatos(datosrepuestas)
+          
+        })
+        .catch(console.log)
 
+    })
+}
 
+if (nombrePaagina == listarPagina){
+
+    formularioEditar.addEventListener("submit",
+        function(evento){
+            evento.preventDefault();//evita la recarga de la pagina
+
+            let datos = new FormData(formularioEditar);
+    
+            let datosEnviar =
+            {
+                name: datos.get('name'),
+                password: datos.get('password'),                
+                id: datos.get('id')
+            };
+    
+            console.log(datosEnviar);
+            fetch ( url + actualizar,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(datosEnviar)
+                }
+            ) 
+            .then( repuesta=> repuesta.json() )
+            .then ( (datosrepuestas) => {
+                editarDatos(datosrepuestas)
+
+            })
+            .catch(console.log)
+    
+        })
+    }
+
+            
 //Metodos
 function cargar(){
     tablausuarios.innerHTML = "";
     cargarspinner();
-    fetch ( url + listar ) //https://paginas-web-cr.com/Api/apis/ListaUsuarios.php
+    fetch ( url + listar ) //
     .then( repuesta=> repuesta.json() )
     .then ( (datosrepuestas) => {
         //console.log(datosrepuestas)
@@ -77,7 +138,6 @@ function pintardatos(objetodatos){
                     role="button"
                     >Eliminar</a
                 >
-                <a href="crearCurso.html" class="btn btn-success" role="button" >Ingresar</a>
 
                 </td>
                 </td>
@@ -94,7 +154,36 @@ function cargarspinner(){
 }
 
 
-
+function insertarDatos(datosrepuestas){
+    if ( datosrepuestas.code == 200){
+        mensajes.innerHTML = `<div
+        class="alert alert-success alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Ingreso exitoso</strong>
+    </div>`;
+    }
+    else{
+    mensajes.innerHTML = `<div
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Algo fallo</strong>
+    </div>`;
+    }
+}
 
 if (nombrePaagina == listarPagina){
     cargar();
