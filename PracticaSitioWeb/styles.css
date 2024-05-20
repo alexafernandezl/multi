@@ -1,0 +1,147 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    background-color: rgb(132, 134, 239);
+    height: 50px;
+}
+
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    padding: 30px;
+}
+
+.central {
+    height: auto;
+    overflow: hidden;
+}
+
+.footer {
+    height: 50px;
+    background-color: rgb(132, 134, 239);
+}
+
+.footer p{
+    text-align: center;
+    color: white;
+}
+
+.Introduccion {
+text-align: center;
+width: 100%;
+}
+
+
+.desarrollo {  
+    float: left;
+    width: 65%;
+
+}
+.desarrollo p{
+    text-align: center;
+    
+}
+
+.lista {
+    text-align: center;
+    background-color:  rgba(132, 134, 239, 0.58);
+
+}
+
+ .conclusion {
+    float:right;
+    width: 35%;
+}
+
+ /*  centar las imagenes */
+.imagenes img {
+    display: block;
+    margin: 10px auto;
+}
+
+.estiloborder{
+    border: 1px solid black;
+}
+
+
+/*_____________CONTACTO_______________*/
+
+.ContenedorPrincipal {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.Formulario {
+    margin-top: 20px;
+    padding: 20px;
+    
+}
+
+.Formulario h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.Formulario p {
+    margin-bottom: 20px;
+}
+/*_____________Servicio______________*/
+.ContenedorPrincipalServicio {
+    max-width: 800px;
+    margin: 0 auto;
+  
+}
+
+.Tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.Tabla th, .Tabla td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.Tabla th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+.video {
+    margin-top: 20px;
+    text-align: center;
+}
+
+    /*____________Acerca DE_____________*/
+.AcercaNosotros {
+text-align: center;        
+width: 100%;
+}               
+.infoGenral {  
+float: left;
+width: 65%;       
+}
+.infoGenral p{
+text-align: center;
+padding: 10px;          
+}     
+.contactosA {
+float:right;
+width: 35%;
+}
+.contactosA p{
+padding: 10px;
+}
+.Historia h3, .Mision h3, .lista h3 {
+margin-bottom: 5px;
+}
+.mapa {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+.InfoContacto{
+background-color:rgba(132, 134, 239, 0.58);
+}

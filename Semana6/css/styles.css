@@ -1,0 +1,30 @@
+
+body {
+    background-color: rgb(186, 208, 231); 
+    font-family: Arial, sans-serif; 
+}
+
+.container {
+    background-color: rgb(255, 255, 255); 
+    border-radius: 8px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+}
+
+h2 {
+    color: #333333; 
+}
+
+.form-control {
+    margin-bottom: 15px; 
+}
+
+.btn-primary {
+    background-color:rgb(69, 126, 187); 
+    border-color:rgb(137, 166, 198); 
+}
+
+.btn-primary:hover {
+    background-color:rgb(69, 126, 187); /* Color de fondo del botón al pasar el ratón */
+    border-color:rgb(69, 126, 187); /* Color del borde del botón al pasar el ratón */
+}

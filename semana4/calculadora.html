@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-3 col-md-6 m-auto text-center">
+    <h1>Calculadora en clase</h1>
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <div class="mb-3">
+                <label for="dato1" class="form-label">Dato 1</label>
+                <input type="number" class="form-control" id="dato1" placeholder="Ingrese su número" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="dato2" class="form-label">Dato 2</label>
+                <input type="number" class="form-control" id="dato2" placeholder="Ingrese su número" />
+            </div>
+        </div>
+        <div class="col text-end">
+            <button class="btn btn-primary" onclick="suma()">Sumar</button>
+            <button class="btn btn-danger" onclick="resta()">Restar</button>
+            <button class="btn btn-warning" onclick="multiplicar()">Multiplicar</button>
+            <button class="btn btn-info" onclick="dividir()">Dividir</button>
+            <button class="btn btn-success" onclick="mayor()">Mayor</button>
+            <button class="btn btn-secondary" onclick="menor()">Menor</button>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <h4 id="resultado">Resultado</h4>
+        </div>
+    </div>
+</div>
+
+<script>
+    function suma() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        let resultado = parseInt(a) + parseInt(b);
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function resta() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        let resultado = parseInt(a) - parseInt(b);
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function multiplicar() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        let resultado = parseInt(a) * parseInt(b);
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function dividir() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        if (b == 0) {
+            document.getElementById("resultado").innerHTML = "Error. No se puede dividir por cero";
+            return;
+        }
+
+        let resultado = parseInt(a) / parseInt(b);
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function mayor() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        let resultado = Math.max(parseInt(a), parseInt(b));
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function menor() {
+        let a = document.getElementById("dato1").value;
+        let b = document.getElementById("dato2").value;
+
+        let resultado = Math.min(parseInt(a), parseInt(b));
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+</script>
+
+    <div class="container-fluid bg-light py-3">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Calculadora</h1>
+        </div>
+    </div>
+        <div class="container calculator">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="output" readonly>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('7')">7</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('8')">8</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('9')">9</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('+')">+</button>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('4')">4</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('5')">5</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('6')">6</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('-')">-</button>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('1')">1</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('2')">2</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('3')">3</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('*')">*</button>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button class="btn custom-btn btn-block" onclick="appendToOutput('0')">0</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="clearOutput()">C</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="calculate()">=</button>
+            </div>
+            <div class="col">
+              <button class="btn custom-btn  btn-block" onclick="appendToOutput('/')">/</button>
+            </div>
+          </div>
+        </div>
+        
+
+<!-- Scripts de Bootstrap y JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  function appendToOutput(value) {
+    document.getElementById('output').value += value;
+  }
+
+  function clearOutput() {
+    document.getElementById('output').value = '';
+  }
+
+  function calculate() {
+    try {
+      document.getElementById('output').value = eval(document.getElementById('output').value);
+    } catch (error) {
+      document.getElementById('output').value = 'Error';
+    }
+  }
+</script>
+</body>
+</html>

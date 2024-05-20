@@ -1,0 +1,9 @@
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+.custom-btn{
+    background-color: rgb(17, 69, 86);
+    color: white;
+}

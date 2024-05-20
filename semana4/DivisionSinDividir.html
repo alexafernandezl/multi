@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-3 col-md-6 m-auto text-center">
+    <h1>División sin división</h1>
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <div class="mb-3">
+                <label for="dato1" class="form-label">Dividendo</label>
+                <input type="number" class="form-control" id="dividendo" placeholder="Ingrese su número" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="dato2" class="form-label">Divisor</label>
+                <input type="number" class="form-control" id="divisor" placeholder="Ingrese su número" />
+            </div>
+        </div>
+        <div class="col text-end">
+            <button class="btn btn-info" onclick="Calcular()">Calcular</button>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <h4 id="resultado">Resultado</h4>
+        </div>
+    </div>
+</div>
+
+<script>
+function divisionSinDivision(dividendo, divisor) {
+    
+    if (divisor === 0) {
+        return "No se puede dividir por cero.";
+    }
+
+    var cociente = 0;
+    while (dividendo >= divisor) {
+        dividendo -= divisor;
+        cociente++;
+    }
+
+    return cociente;
+}
+
+function Calcular() {
+    var dividendo = parseInt(document.getElementById("dividendo").value);
+    var divisor = parseInt(document.getElementById("divisor").value);
+
+    var resultado = divisionSinDivision(dividendo, divisor);
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+</body>
+</html>
+
+
+
+

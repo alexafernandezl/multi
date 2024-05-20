@@ -1,0 +1,59 @@
+
+header {
+    background-color:  rgb(61, 84, 8); 
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: #ffffff; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important; 
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; 
+}
+
+footer {
+    background-color: rgb(61, 84, 8); 
+    padding: 20px 0; 
+}
+
+
+.carousel-indicators button {
+    background-color: rgb(61, 84, 8); 
+    border-color: rgb(61, 84, 8); 
+}
+
+.carousel-indicators button.active {
+    background-color: rgb(61, 84, 8); 
+}
+
+#carouselExampleIndicators .carousel-inner img {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+}
+.img-categoria {
+    width: 300px; 
+    height: 300px; 
+}
+.btn-custom {
+background-color: rgb(61, 84, 8);
+    border-color: rgb(61, 84, 8);
+    color: white; 
+}
+.card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+}
+.img-fluid {
+    max-width: 80%;
+    height: 80%;
+}
+.services-icon-wap .h1,
+.services-icon-wap .h1 i {
+    color: rgb(61, 84, 8) !important;
+}
