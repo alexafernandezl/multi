@@ -5,7 +5,7 @@ let mensajes = document.querySelector("#mensajes");
 let url =  "https://paginas-web-cr.com/Api/apis/";
 let listar = "ListaGrupo.php";
 let insertar = "InsertarGrupo.php";
-let actualizar = "ActualizarCursos.php";
+let actualizar = "ActualizarGrupo.php";
 
 let formulario = document.getElementById("formulario");
 let formularioEditar = document.getElementById("formularioEditar");
@@ -38,9 +38,7 @@ formulario.addEventListener("submit",
 
         let datosEnviar =
         {
-        
             nombre: datos.get('nombre'),
-           
         };
 
         fetch ( url + insertar,
@@ -64,12 +62,11 @@ if (nombrePaagina == listarPagina){
     formularioEditar.addEventListener("submit",
         function(evento){
             evento.preventDefault();//evita la recarga de la pagina
-
             let datos = new FormData(formularioEditar);
-    
             let datosEnviar =
             {
-                name: datos.get('name'),
+                id: datos.get('id'),
+                nombre: datos.get('nombre'),
                 
             };
     
@@ -133,7 +130,6 @@ function pintardatos(objetodatos){
                     role="button"
                     >Eliminar</a
                 >
-
                 </td>
                 </td>
             </tr>`;
@@ -179,6 +175,51 @@ function insertarDatos(datosrepuestas){
     </div>`;
     }
 }
+
+function editar(datos){
+    let objeto  = JSON.parse(decodeURIComponent(datos));
+    
+    const modalEdicion = new bootstrap.Modal(document.getElementById("modalEdicion"));
+    modalEdicion.show();
+
+    document.getElementById("id").value = objeto.id;
+    document.getElementById("nombre").value = objeto.nombre;
+    document.getElementById("idEditar").innerHTML = objeto.id;
+
+}
+
+function editarDatos(datosrepuestas){
+    if ( datosrepuestas.code == 200){
+        mensajes.innerHTML = `<div
+        class="alert alert-success alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Modificacion exitosa</strong>
+    </div>`;
+    setTimeout(cargar, 3000);
+    }
+    else{
+    mensajes.innerHTML = `<div
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Algo fallo</strong>
+    </div>`;
+    }
+}
+
 function insertarDatos(datosRespuesta) {
     if (datosRespuesta.code === 200) {
         mensajes.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -4,7 +4,7 @@ let mensajes = document.querySelector("#mensajes");
 
 let url =  "https://paginas-web-cr.com/Api/apis/";
 let listar = "ListaUsuarios.php";
-let insertar = "InsertarCursos.php";
+let insertar = "InsertarUsuarios.php";
 let actualizar = "ActualizarUsuarios.php";
 
 let formulario = document.getElementById("formulario");
@@ -38,21 +38,9 @@ formulario.addEventListener("submit",
 
         let datosEnviar =
         {
-        
-            cedula: datos.get('cedula'),
-            correoelectronico: datos.get('correoelectronico'),
-            telefono: datos.get('telefono'),
-            telefonocelular: datos.get('telefonocelular'),
-            fechanacimiento: datos.get('fechanacimiento'),
-            sexo: datos.get('sexo'),
-            direccion: datos.get('direccion'),
-            nombre: datos.get('nombre'),
-            apellidopaterno: datos.get('apellidopaterno'),
-            apellidomaterno: datos.get('apellidomaterno'),
-            nacionalidad: datos.get('nacionalidad'),
-            idCarreras: datos.get('idCarreras'),
-            usuario: datos.get('usuario')
-            
+            name: datos.get('name'),
+            password: datos.get('password'),
+            email: datos.get('email')
         };
 
         fetch ( url + insertar,
@@ -110,7 +98,7 @@ if (nombrePaagina == listarPagina){
 function cargar(){
     tablausuarios.innerHTML = "";
     cargarspinner();
-    fetch ( url + listar ) //https://paginas-web-cr.com/Api/apis/ListaUsuarios.php
+    fetch ( url + listar ) 
     .then( repuesta=> repuesta.json() )
     .then ( (datosrepuestas) => {
         //console.log(datosrepuestas)
@@ -129,19 +117,9 @@ function pintardatos(objetodatos){
             class="table-primary"
             >
                 <td scope="row">${item.id}</td>
-                <td>${item.cedula}</td>
-                <td>${item.correoelectronico}</td>
-                <td>${item.telefono}</td>
-                <td>${item.telefonocelular}</td>
-                <td>${item.fechanacimiento}</td>
-                <td>${item.sexo}</td>
-                <td>${item.direccion}</td>
-                <td>${item.nombre}</td>
-                <td>${item.apellidopaterno}</td>
-                <td>${item.apellidomaterno}</td>
-                <td>${item.nacionalidad}</td>
-                <td>${item.idCarreras}</td>
-                <td>${item.usuario}</td>
+                <td>${item.name}</td>
+                <td>${item.email}</td>
+                <td>${item.password}</td>
                 <td>
                 <a
                     name=""
@@ -267,3 +245,4 @@ function modalConfirmacionEliminar(){
 if (nombrePaagina == listarPagina){
     cargar();
 }
+
