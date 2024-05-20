@@ -184,6 +184,23 @@ function insertarDatos(datosrepuestas){
     </div>`;
     }
 }
+function insertarDatos(datosRespuesta) {
+    if (datosRespuesta.code === 200) {
+        mensajes.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>Ingreso exitoso</strong>
+        </div>`;
+    } else {
+        mostrarMensajeError();
+    }
+}
+
+function mostrarMensajeError() {
+    mensajes.innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>Algo falló</strong>
+    </div>`;
+}
 
 if (nombrePaagina == listarPagina){
     cargar();
