@@ -71,8 +71,10 @@ if (nombrePaagina == listarPagina){
     
             let datosEnviar =
             {
-                name: datos.get('name'),
-                password: datos.get('password'),                
+                nombre: datos.get('nombre'),
+                descripcion: datos.get('descripcion'),
+                tiempo: datos.get('tiempo'), 
+                usuario: datos.get('usuario'),               
                 id: datos.get('id')
             };
     
@@ -184,6 +186,57 @@ function insertarDatos(datosrepuestas){
     </div>`;
     }
 }
+
+function editar(datos){
+    let objeto  = JSON.parse(decodeURIComponent(datos));
+    
+    const modalEdicion = new bootstrap.Modal(document.getElementById("modalEdicion"));
+    modalEdicion.show();
+
+    document.getElementById("id").value = objeto.id;
+    document.getElementById("nombre").value = objeto.nombre;
+    document.getElementById("descripcion").value = objeto.descripcion;
+    document.getElementById("tiempo").value = objeto.tiempo;
+    document.getElementById("usuario").value = objeto.usuario;
+    document.getElementById("idEditar").innerHTML = objeto.id;
+
+}
+
+function editarDatos(datosrepuestas){
+    if ( datosrepuestas.code == 200){
+        mensajes.innerHTML = `<div
+        class="alert alert-success alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Modificacion exitosa</strong>
+    </div>`;
+    setTimeout(cargar, 3000);
+    }
+    else{
+    mensajes.innerHTML = `<div
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+    >
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+        <strong>Algo fallo</strong>
+    </div>`;
+    }
+}
+
+
+
+
 function insertarDatos(datosRespuesta) {
     if (datosRespuesta.code === 200) {
         mensajes.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
