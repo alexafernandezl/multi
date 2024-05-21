@@ -15,38 +15,25 @@ let listarPagina = "Listar Usuarios";
 let crearPagina = "Crear";
 
 let spinner = `
-            <button
-            class="btn btn-primary"
-            type="button"
-            disabled
-            >
-            <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-            ></span>
-            Loading...
-            </button>`;
+    <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>`;
 
 if (nombrePaagina == crearPagina){
-
-formulario.addEventListener("submit",
-    function(evento){
+    formulario.addEventListener("submit",function(evento){
         evento.preventDefault();//evita la recarga de la pagina
       
         let datos = new FormData(formulario);
 
-        let datosEnviar =
-        {
-        
+        let datosEnviar = {
             nombre: datos.get('nombre'),
             descripcion: datos.get('descripcion'),
             tiempo: datos.get('tiempo'),
             usuario: datos.get('usuario')
         };
 
-        fetch ( url + insertar,
-            {
+        fetch ( url + insertar,{
                 method: 'POST',
                 body: JSON.stringify(datosEnviar)
             }
@@ -57,7 +44,6 @@ formulario.addEventListener("submit",
           
         })
         .catch(console.log)
-
     })
 }
 
@@ -93,9 +79,7 @@ if (nombrePaagina == listarPagina){
             .catch(console.log)
     
         })
-    }
-
-            
+}          
 //Metodos
 function cargar(){
     tablausuarios.innerHTML = "";
@@ -115,9 +99,7 @@ function pintardatos(objetodatos){
         for (const item of objetodatos.data) {
             //console.log(item.id);
             tablausuarios.innerHTML += `
-            <tr
-            class="table-primary"
-            >
+            <tr class="table-primary"  >
                 <td scope="row">${item.id}</td>
                 <td>${item.nombre}</td>
                 <td>${item.descripcion}</td>
@@ -140,8 +122,6 @@ function pintardatos(objetodatos){
                     role="button"
                     >Eliminar</a
                 >
-
-                </td>
                 </td>
             </tr>`;
 
@@ -154,7 +134,6 @@ function pintardatos(objetodatos){
 function cargarspinner(){
     document.getElementById("seccionspinner").innerHTML = spinner;
 }
-
 
 function insertarDatos(datosrepuestas){
     if ( datosrepuestas.code == 200){
@@ -233,9 +212,6 @@ function editarDatos(datosrepuestas){
     </div>`;
     }
 }
-
-
-
 
 function insertarDatos(datosRespuesta) {
     if (datosRespuesta.code === 200) {

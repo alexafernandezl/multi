@@ -1,11 +1,10 @@
-// Propiedades
 let tablausuarios = document.querySelector("#tablausuarios");
 let mensajes = document.querySelector("#mensajes");
 
 let url = "https://paginas-web-cr.com/Api/apis/";
 let listar = "ListaEstudiantes.php";
 let insertar = "InsertarEstudiantes.php";
-let actualizar = "ActualizarCursos.php";
+let actualizar = "ActualizarEstudiantes.php";
 
 let formulario = document.getElementById("formulario");
 let formularioEditar = document.getElementById("formularioEditar");

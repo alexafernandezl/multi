@@ -20,43 +20,22 @@
     </head>
 
     <body>
-        <div
-            class="container-fluid"
-        >
+        <div class="container-fluid">
             <header>
-                <div id="menu">
-
-                </div>       
+                <div id="menu"> </div>       
             </header>
             <main>
-                <div
-                    class="container-fluid min-vh-100"
-                >
-                    <div
-                        class="row "
-                    >
+                <div class="container-fluid min-vh-100" >
+                    <div class="row " >
                         <h1>Lista de Profesores</h1>
                         <a href="insertarProfesores.html" class="btn btn-success" role="button" >Ingresar</a>
-                        <div
-                            class="table-responsive"
-                        >
-
-                        <div id="seccionspinner">
-
-                            
-                        </div>
-                        <div id="mensajes">
-
-                        </div>
-                            <table
-                                class="table table-striped table-hover table-borderless table-primary align-middle"
-                            >
+                        <div class="table-responsive">
+                        <div id="seccionspinner"> </div>
+                        <div id="mensajes"></div>
+                            <table class="table table-striped table-hover table-borderless table-primary align-middle">
                                 <thead class="table-light">
-                                    <caption>
-                                        Profesores
-                                    </caption>
+                                    <caption> Profesores</caption>
                                     <tr>
-                                       
                                         <th>Id</th>
                                         <th>Cedula</th>
                                         <th>Correo Electronico</th>
@@ -75,26 +54,16 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-group-divider" id="tablausuarios">
-                        
                                 </tbody>
-                                <tfoot>
-                                    
-                                </tfoot>
+                                <tfoot></tfoot>
                             </table>
                         </div>
-
-
-
-
-                    </div>
-                    
+                    </div>   
                 </div>
             </main>
             <footer>
                 <!-- place footer here -->
-                <div id="piedepagina">
-
-                </div>
+                <div id="piedepagina"></div>
             </footer>
         </div>
 
@@ -166,8 +135,7 @@
         >
         <div
             class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
-            role="document"
-        >
+            role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitleId">
@@ -181,77 +149,196 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    
-
                     <form id="formularioEditar">
                         <div class="mb-3">
-                            <label for="" class="form-label">Id</label>
+                            <label for="id" class="form-label">Id</label>
                             <input type="hidden" id="id" name="id">
                             <span id="idEditar"></span>
-                            
                         </div>                
+                    
                         <div class="mb-3">
-                            <label for="" class="form-label">Name</label>
-                            <input type="hidden" id="id" name="id">
+                            <label for="cedula" class="form-label">Cedula</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                name="name"
-                                id="name"
+                                name="cedula"
+                                id="cedula"
                                 aria-describedby="helpId"
-                                placeholder=""
+                                placeholder="Ingrese la cedula"
                                 required
                             />
-                            <small id="helpId" class="form-text text-muted">Help text</small>
+                            <small id="helpId" class="form-text text-muted">Ingrese la cedula</small>
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="" class="form-label">password</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="password"
-                                id="password"
-                                aria-describedby="helpId"
-                                placeholder=""
-                                required
-                            />
-                            <small id="helpId" class="form-text text-muted">Help text</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">email</label>
+                            <label for="correoelectronico" class="form-label">Correo Electrónico</label>
                             <input
                                 type="email"
                                 class="form-control"
-                                name="email"
-                                id="email"
+                                name="correoelectronico"
+                                id="correoelectronico"
                                 aria-describedby="helpId"
-                                placeholder=""
+                                placeholder="Ingrese el correo electrónico"
                                 required
-                                disabled
                             />
-                            <small id="helpId" class="form-text text-muted">Help text</small>
-                        </div>    
+                            <small id="helpId" class="form-text text-muted">Ingrese el correo electrónico</small>
+                        </div>
+                        
                         <div class="mb-3">
-                            
-                            <button
-                                type="submit"
-                                class="btn btn-primary"
-                            >
-                                Enviar
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary"
-                                data-bs-dismiss="modal"
-                            >
-                                Close
-                            </button>
-                            
-                        </div>    
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input
+                                type="tel"
+                                class="form-control"
+                                name="telefono"
+                                id="telefono"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el teléfono"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el teléfono</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="telefonocelular" class="form-label">Teléfono Celular</label>
+                            <input
+                                type="tel"
+                                class="form-control"
+                                name="telefonocelular"
+                                id="telefonocelular"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el teléfono celular"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el teléfono celular</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="fechanacimiento" class="form-label">Fecha de Nacimiento</label>
+                            <input
+                                type="date"
+                                class="form-control"
+                                name="fechanacimiento"
+                                id="fechanacimiento"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese la fecha de nacimiento"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese la fecha de nacimiento</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" id="sexo" name="sexo" required>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                            <small id="helpId" class="form-text text-muted">Seleccione el sexo</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="direccion"
+                                id="direccion"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese la dirección"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese la dirección</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="nombre"
+                                id="nombre"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el nombre"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el nombre</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="apellidopaterno" class="form-label">Apellido Paterno</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="apellidopaterno"
+                                id="apellidopaterno"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el apellido paterno"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el apellido paterno</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="apellidomaterno" class="form-label">Apellido Materno</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="apellidomaterno"
+                                id="apellidomaterno"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el apellido materno"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el apellido materno</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="idCarreras" class="form-label">Id Carreras</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="idCarreras"
+                                id="idCarreras"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el Id de Carreras"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el Id de Carreras</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="usuario"
+                                id="usuario"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese el usuario"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese el usuario</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="nacionalidad"
+                                id="nacionalidad"
+                                aria-describedby="helpId"
+                                placeholder="Ingrese la nacionalidad"
+                                required
+                            />
+                            <small id="helpId" class="form-text text-muted">Ingrese la nacionalidad</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
                     </form>
-
-
-
+                    
                 </div>
                 <div class="modal-footer">
 
